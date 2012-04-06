@@ -1,0 +1,3 @@
+# AIR Compression Example
+
+An example of how to use the NativeProcess classes in the AIR framework to achieve file compression via 7zip.
