@@ -41,10 +41,16 @@ package pk.example.compression
 		{
 			var args: Vector.<String> = new Vector.<String>();
 			
+			// flag tells 7zip to archive
 			args.push("a");
+			
+			// defines to create a .zip acrhive
 			args.push("-tzip");
+			
+			// path to save the zip file to
 			args.push(zipFile.nativePath);
 			
+			// path of all the files to include in the archive
 			for each(var file: File in files)
 			{
 				args.push(file.nativePath);
@@ -67,7 +73,10 @@ package pk.example.compression
 		}
 		
 		/**
+		 * Creates a zip file.
 		 * 
+		 * @filesToArchive 	Collection of files to include in the archive.
+		 * @zipFile			.zip file that will be created.
 		 */
 		public function zip(filesToArchive: Vector.<File>, zipFile: File): void
 		{
