@@ -19,11 +19,11 @@ package pk.example.compression
 		 */
 		private function get zipFile(): File
 		{
-			return File.applicationDirectory.resolvePath(ZIP_FILENAME);
+			return File.applicationStorageDirectory.resolvePath(ZIP_FILENAME);
 		}
 		
 		[After]
-		public function after(): void
+		public function before(): void
 		{
 			// ensure that the zip file is deleted after each test.
 			if (zipFile.exists)
@@ -34,12 +34,13 @@ package pk.example.compression
 		 * Tests that when the zip has finished the completeSignal is dispatched.
 		 */
 		[Test(async)]
-		public function zip_filesAreArchived_dispatchesCompleteSignal(): void
+		public function zip_filesAreArchivedInZipFile(): void
 		{
-			var dummyFiles: Vector.<File> = dummyFiles();
 			var fileCompression: FileCompression = new FileCompression();
 			
 			handleSignal(this, fileCompression.completeSignal, assetZipFileExists, TIMEOUT);
+			
+			fileCompression.zip(dummyFiles(), zipFile);
 		}
 		
 		/**
