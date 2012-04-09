@@ -31,7 +31,9 @@ package pk.example.compression
 		}
 		
 		/**
-		 * Tests that when the zip has finished the completeSignal is dispatched.
+		 * Tests that when the zip has finished, the completeSignal is
+		 * dispatched to a method that will assert that the zip file
+		 * is present as expected.
 		 */
 		[Test(async)]
 		public function zip_filesAreArchivedInZipFile(): void
