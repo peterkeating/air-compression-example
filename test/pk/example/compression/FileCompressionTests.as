@@ -40,7 +40,7 @@ package pk.example.compression
 		{
 			var fileCompression: FileCompression = new FileCompression();
 			
-			handleSignal(this, fileCompression.completeSignal, assetZipFileExists, TIMEOUT);
+			handleSignal(this, fileCompression.completeSignal, assertZipFileExists, TIMEOUT);
 			
 			fileCompression.zip(dummyFiles(), zipFile);
 		}
@@ -49,7 +49,7 @@ package pk.example.compression
 		 * Proves that the code works by asserting that
 		 * the zip file exists.
 		 */
-		private function assetZipFileExists(e: SignalAsyncEvent, data: Object): void
+		private function assertZipFileExists(e: SignalAsyncEvent, data: Object): void
 		{
 			assertThat(zipFile.exists, isTrue());
 		}
