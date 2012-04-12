@@ -4,7 +4,7 @@ An example of how to use the NativeProcess classes in the AIR framework to achie
 
 ## Tools
 
-### Flex SDK 4.5.1
+### Flex
 
 The code in this example was built using the Flex 4.5.1 SDK, however I'm confident it will work for earlier version of the Flex SDK.
 
